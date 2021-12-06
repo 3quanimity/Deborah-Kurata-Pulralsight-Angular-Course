@@ -6,9 +6,8 @@
     <div class="row">
       <div class="col-md-2">Filter by:</div>
       <div class="col-md-4">
-          <input type="text"
-          [(ngModel)] = 'listFilter'/>
-       </div>
+        <input type="text" [(ngModel)]="listFilter" />
+      </div>
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -21,7 +20,7 @@
           <tr>
             <th>
               <button class="btn btn-primary" (click)="toggleImage()">
-                {{showImage ? 'Hide' : 'Show'}} Images
+                {{ showImage ? "Hide" : "Show" }} Images
               </button>
             </th>
             <th>Product</th>
@@ -43,11 +42,17 @@
               />
             </td>
             <td>{{ product.productName }}</td>
-            <td>{{ product.productCode | lowercase | convertToSpaces: '-'}}</td>
+            <td>
+              {{ product.productCode | lowercase | convertToSpaces: "-" }}
+            </td>
             <td>{{ product.releaseDate }}</td>
-            <td>{{ product.price | currency: 'USD' : 'symbol' : '1.2-2' }}</td>
-            <!-- <td>{{ product.starRating }}</td> -->
-            <td><pm-star [rating]= 'product.starRating'></pm-star></td>
+            <td>{{ product.price | currency: "USD":"symbol":"1.2-2" }}</td>
+            <td>
+              <pm-star
+                [rating]="product.starRating"
+                (ratingClicked)="onRatingClicked($event)"
+              ></pm-star>
+            </td>
           </tr>
         </tbody>
       </table>
