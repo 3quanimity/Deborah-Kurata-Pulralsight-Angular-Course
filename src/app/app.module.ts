@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.components';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { StarComponent } from './shared/star.component';
     ProductListComponent,
     ConvertToSpacesPipe,
     StarComponent,
+    ProductDetailComponent,
   ], // components
   imports: [BrowserModule, FormsModule, HttpClientModule], // external modules
   bootstrap: [AppComponent], // startup component of an application
